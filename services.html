@@ -1,0 +1,91 @@
+<!-- services.html - Services Page for JOVIC TECHNOLOGY -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - JOVIC D TECHNOLOGY</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: bounce 3s infinite;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .logo-text {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #1E90FF;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00C897;
+      }
+      to {
+        box-shadow: 0 0 20px #FFD700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/Logo1.jpg" alt="JOVIC Logo" class="logo-img" />
+      <span class="logo-text">JOVIC D TECHNOLOGY</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Content -->
+  <section class="services">
+    <h1>Our Services</h1>
+    <ul>
+      <li>📱 Phone Repairs – screen replacement, charging issues, water damage, software repair, etc.</li>
+      <li>💻 Laptop Repairs – screen, keyboard, battery, motherboard, fan, and software problems.</li>
+      <li>🔋 Power Bank Repairs – cell replacement, charging circuit troubleshooting, and port repair.</li>
+      <li>☀️ Solar System Setup – complete solar kits, installations, inverter setup, and consultations.</li>
+      <li>🛠️ Device Diagnosis – complete diagnostic service to detect hardware/software faults.</li>
+      <li>📦 Upgrades & Parts Replacement – RAM, SSD/HDD, battery and display upgrades.</li>
+    </ul>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/2347030142229" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    💬 Chat with Us
+  </a>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

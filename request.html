@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repair Request - JOVIC D TECHNOLOGY</title>
+
+  <!-- Animated Logo Style -->
+  <style>
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 120px;
+      height: auto;
+      animation: bounce 2s infinite, glow 1.5s infinite alternate;
+      border-radius: 10px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+      }
+      100% {
+        box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+      }
+    }
+  </style>
+
+  <!-- Removed style.css to eliminate blue dot animation -->
+  <style>
+    body {
+      background: linear-gradient(to right, #000428, #004e92);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00f0ff;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      background: white;
+      color: black;
+    }
+
+    button {
+      background-color: #00f0ff;
+      color: black;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00f0ff;
+      }
+      to {
+        box-shadow: 0 0 25px #00f0ff, 0 0 50px #00f0ff;
+      }
+    }
+
+    .note {
+      font-size: 14px;
+      color: #f0f0f0;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .confirmation-message {
+      display: none;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+      color: #00f0ff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .success-box {
+      animation: fadeIn 1.5s ease-in-out, popUp 0.5s ease;
+      margin-top: 30px;
+      background: rgba(0, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00f0ff;
+      position: relative;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checkmark-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .checkmark-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #00f0ff;
+      position: relative;
+      animation: popUp 0.6s ease-in-out;
+    }
+
+    .checkmark-stem {
+      position: absolute;
+      width: 6px;
+      height: 25px;
+      background: #004e92;
+      top: 35%;
+      left: 42%;
+      transform: rotate(45deg);
+      border-radius: 3px;
+    }
+
+    .checkmark-kick {
+      position: absolute;
+      width: 6px;
+      height: 15px;
+      background: #004e92;
+      top: 55%;
+      left: 40%;
+      transform: rotate(-45deg);
+      border-radius: 3px;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(circle, #00f0ff 2px, transparent 2px),
+                        radial-gradient(circle, #ff0 2px, transparent 2px),
+                        radial-gradient(circle, #f0f 2px, transparent 2px);
+      background-size: 20px 20px;
+      animation: confettiAnim 0.5s ease-out forwards;
+      z-index: 0;
+    }
+
+    @keyframes confettiAnim {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Logo -->
+  <div class="logo-container">
+    <img src="assets/Logo1.jpg" alt="JOVIC D TECHNOLOGY Logo">
+  </div>
+
+  <h2>Request A Device Repair Form.</h2>
+
+  <form id="repairForm" onsubmit="submitToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+    <input type="email" id="email" placeholder="Your Email Address" required>
+
+    <select id="device" required>
+      <option value="">Select Device Type</option>
+      <option>Phone</option>
+      <option>Laptop</option>
+      <option>Power Bank</option>
+      <option>Solar System</option>
+    </select>
+
+    <textarea id="issue" rows="4" placeholder="Describe the problem with your device..." required></textarea>
+
+    <label class="note">Optional: Upload a screenshot of the issue</label>
+    <input type="file" id="screenshot" accept="image/*">
+
+    <button type="submit">Submit Repair Request</button>
+  </form>
+
+  <div class="confirmation-message success-box" id="confirmationMsg">
+    <div class="checkmark-container">
+      <div class="checkmark-circle">
+        <div class="checkmark-stem"></div>
+        <div class="checkmark-kick"></div>
+      </div>
+    </div>
+    <h3>Repair Request Sent!</h3>
+    <p>  KINDLY WAIT A FEW SECOND!!!,YOU WILL BE REDIRECTED TO YOUR WHATSAPP. <br><br>
+    📎 If you uploaded a screenshot, kindly send it via WhatsApp as well. <br><br>
+    ⏳ We’ll contact you within a few hours. Thanks for choosing <strong>JOVIC D TECHNOLOGY</strong>!</p>
+    <div class="confetti"></div>
+  </div>
+
+  <script>
+    function submitToWhatsApp(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const device = document.getElementById("device").value;
+      const issue = document.getElementById("issue").value.trim();
+
+      const message = `📱 *JOVIC D TECHNOLOGY Repair Request*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📧 Email: ${email}\n🔧 Device: ${device}\n📝 Issue: ${issue}`;
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://wa.me/2347030142229?text=${encodedMsg}`;
+
+      window.open(waUrl, "_blank");
+
+      document.getElementById("repairForm").style.display = "none";
+      document.getElementById("confirmationMsg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - JOVIC D TECHNOLOGY</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: bounce 3s infinite;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .logo-text {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #1E90FF;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00C897;
+      }
+      to {
+        box-shadow: 0 0 20px #FFD700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading animation while page content loads -->
+  <div class="loader">Loading Testimonials...</div>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/Logo1.jpg" alt="JOVIC Logo" class="logo-img" />
+      <span class="logo-text">JOVIC D TECHNOLOGY</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- Testimonials section -->
+  <section class="testimonials">
+    <h2>What Our Customers Are Saying</h2>
+
+    <div id="testimonial-container">
+      <!-- Testimonials will be generated here -->
+    </div>
+  </section>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/2347030142229" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    💬 Chat with Us
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 JOVIC D  TECHNOLOGY - RC:7631753. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    // ------------------------------
+    // ✅ Testimonial Auto-Refresher
+    // ------------------------------
+    const testimonials = [
+      { text: "“JOVIC TECHNOLOGY repaired my iPhone in just one day! Fast service and affordable pricing. Highly recommend!”", name: "- Sarah O., Apete" },
+      { text: "“They revived my laptop after a surge. Their engineers are top-notch.”", name: "- Daniel M., UI Student" },
+      { text: "“They built a solar system for our home — flawless setup!”", name: "- Mrs. Adeola, Bodija" },
+      { text: "“Fixed my power bank in 2 hours. Real professionals.”", name: "- Chuks E., Polytechnic Ibadan" },
+      { text: "“Friendly team and great follow-up service.”", name: "- Mariam K., Dugbe" },
+      { text: "“Best place for affordable laptop upgrades. Fast and safe.”", name: "- Bashir A., Sango" },
+      { text: "“They kept me updated every step of the repair. Excellent service.”", name: "- Rita E., Awotan" },
+    ];
+
+    const container = document.getElementById("testimonial-container");
+
+    function showRandomTestimonial() {
+      const random = testimonials[Math.floor(Math.random() * testimonials.length)];
+      container.innerHTML = `
+        <div class="testimonial">
+          <p>${random.text}</p>
+          <strong>${random.name}</strong>
+        </div>
+      `;
+    }
+
+    // Initial testimonial
+    showRandomTestimonial();
+
+    // Refresh every 5 seconds
+    setInterval(showRandomTestimonial, 7000);
+  </script>
+</body>
+</html>

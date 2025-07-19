@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - JOVIC D TECHNOLOGY</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: bounce 3s infinite;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .logo-text {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #1E90FF;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00C897;
+      }
+      to {
+        box-shadow: 0 0 20px #FFD700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading animation -->
+  <div class="loader">Loading About Page...</div>
+
+  <!-- Navigation bar with logo, links, and hamburger menu -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/Logo1.jpg" alt="JOVIC Logo" class="logo-img" />
+      <span class="logo-text">JOVIC D TECHNOLOGY</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+    <!-- Hamburger icon triggers mobile menu -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- About content with multiple descriptive sections -->
+  <section class="summary">
+    <h2>Who We Are</h2>
+    <p>
+      At JOVIC D TECHNOLOGY, we are a team of experienced and passionate engineers based in Apete, Ibadan, dedicated to solving your device problems with professionalism and care>
+    </p>
+
+    <h2>Our Vision</h2>
+    <p>
+      Our vision is to create a tech community where everyone has access to affordable and sustainable repairs and energy systems. We aim to remove the need for frequent device>
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+      We strive to provide reliable and innovative engineering services through cutting-edge diagnostics, fast repair times, genuine parts, and customer-focused support. Your d>
+    </p>
+
+    <h2>What Sets Us Apart</h2>
+    <p>
+      Unlike traditional repair centers, JOVIC D TECHNOLOGY ensures full transparency, fast turnaround, and premium customer care. We document every service and maintain high sta>
+    </p>
+
+    <h2>Meet the Team</h2>
+    <p>
+      Our team consists of certified engineers, IT professionals, and renewable energy experts with years of hands-on experience. Each team member brings unique expertise, ensu>
+    </p>
+
+    <h2>Location & Contact</h2>
+    <p>
+      You can find us at Near Colony, Oju Oja, Apete, Ibadan, Oyo State. For any inquiries or emergency repair needs, contact us via:
+      <br />
+      📞 07030142229 / 07082084663<br />
+      💬 WhatsApp: 07030142229 / 07082084663
+    </p>
+  </section>
+
+  <!-- WhatsApp floating chat button -->
+  <a
+    href="https://wa.me/2347030142229"
+    target="_blank"
+    class="whatsapp-float"
+    title="Chat with us on WhatsApp"
+  >
+    💬 Chat with Us
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 JOVIC D TECHNOLOGY - RC:7631753. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for mobile navigation toggle -->
+  <script>
+    function toggleMenu() {
+      // Toggles the visibility of the navigation links in mobile view
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+

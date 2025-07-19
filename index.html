@@ -1,0 +1,138 @@
+
+<!-- index.html - Homepage for JOVIC TECHNOLOGY -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOVIC D TECHNOLOGY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: bounce 3s infinite;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .logo-text {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #1E90FF;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00C897;
+      }
+      to {
+        box-shadow: 0 0 20px #FFD700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar with logo and menu links -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/Logo1.jpg" alt="JOVIC Logo" class="logo-img" />
+      <span class="logo-text">JOVIC D TECHNOLOGY</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero section with a brief statement and contact numbers -->
+  <header class="hero">
+    <h1>We Repair Phones, Laptops, Power Banks & Build Solar Systems</h1>
+    <p>Contact us: 07030142229, 07082084663 (WhatsApp Available)</p>
+    <button class="btn" onclick="location.href='request.html'">Request Repair</button>
+  </header>
+
+  <!-- Summary section explaining business mission and services -->
+  <section class="summary">
+    <h2>Why Choose JOVIC D TECHNOLOGY?</h2>
+    <p>At JOVIC D TECHNOLOGY, our mission is to deliver reliable and professional repair services for phones, laptops, power banks, and solar installations. We operate with integrity and skill.</p>
+    <p>We believe that every customer deserves timely, affordable, and effective solutions. From cracked screens to motherboard repairs, battery replacements to power supply issues, we've got you covered.</p>
+    <p>Beyond just repairs, we offer guidance on best practices to extend the lifespan of your devices. Whether it’s iOS, Android, Windows or macOS, our team is trained across platforms.</p>
+    <p>We also specialize in solar power installations — both small-scale and household systems. In a world where alternative energy is the future, we provide reliable, affordable solar solutions.</p>
+    <p>Our aim is to bring convenience to our customers, which is why we created this website. You can now request repairs online, describe the fault, upload images, and get contacted fast.</p>
+    <p>Located at Near Colony, Oju oja, Apete, Ibadan, Oyo State, we are proud to serve local customers and beyond. Thank you for trusting JOVIC TECHNOLOGY. Let’s fix it right, the first time.</p>
+  </section>
+
+  <!-- Services offered by the business -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>📱 Phone Repairs (Screen, Battery, Software, IC, and Board issues)</li>
+      <li>💻 Laptop Repairs (Keyboard, Screen, Charging Port, OS installation)</li>
+      <li>🔋 Power Bank Repairs (Dead batteries, ports, circuit issues)</li>
+      <li>☀️ Solar System Design and Installation (Home, Business, Outdoor)</li>
+      <li>🛠️ Diagnostics and Testing Services</li>
+      <li>📦 Parts Replacement and Upgrades</li>
+    </ul>
+  </section>
+
+  <!-- Customer testimonial section -->
+  <section class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial">
+      <p>"JOVIC fixed my iPhone screen in less than 1 hour. Super professional!" - Mary O.</p>
+    </div>
+    <div class="testimonial">
+      <p>"Their solar system setup now powers my home reliably. Thanks JOVIC!" - Mr. Sola A.</p>
+    </div>
+    <div class="testimonial">
+      <p>"Affordable and excellent laptop repair service. Highly recommended." - Tunde K.</p>
+    </div>
+  </section>
+
+  <!-- Footer section with address -->
+  <footer>
+    <p>© 2025 JOVIC D TECHNOLOGY - RC:7631753 | Near Colony, Oju oja, Apete, Ibadan, Oyo State.</p>
+  </footer>
+
+  <!-- Floating WhatsApp button linking to WhatsApp chat -->
+  <a href="https://wa.me/2347030142229" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    💬 Chat with Us
+  </a>
+
+  <!-- Loader shown until page fully loads -->
+  <div class="loader" id="loader"></div>
+
+  <!-- JavaScript for menu toggle and loading animation -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      loader.style.display = "none";
+    });
+  </script>
+</body>
+</html>
